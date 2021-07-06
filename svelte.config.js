@@ -1,5 +1,5 @@
 // import netlify from '@sveltejs/adapter-netlify';
-import begin from './latest-sv-kit/kit/packages/adapter-begin/index.mjs';
+import begin from './adapter-begin/index.mjs';
 
 export default {
 	kit: {
