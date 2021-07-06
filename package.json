@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build --verbose",
+		"build": "node -v && svelte-kit build --verbose",
 		"preview": "svelte-kit preview"
 	},
 	"devDependencies": {
