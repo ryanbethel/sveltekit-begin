@@ -1,0 +1,1 @@
+import{S as s,i as t,s as r}from"../chunks/vendor-b0eb1977.js";function e(){return{redirect:"/top/1",status:301}}export default class extends s{constructor(s){super(),t(this,s,null,null,r,{})}}export{e as load};

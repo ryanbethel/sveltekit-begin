@@ -1,0 +1,17 @@
+{
+	"name": "hn.svelte.dev",
+	"version": "1.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build --verbose",
+		"preview": "svelte-kit preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-begin": "^1.0.0-next.11",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.18",
+		"@sveltejs/kit": "^1.0.0-next.120",
+		"svelte": "^3.38.3"
+	}
+}
