@@ -5,4 +5,4 @@ svelte-kit-app
 get /
 
 @static
-folder public
+folder .begin/public

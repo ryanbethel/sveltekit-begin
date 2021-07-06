@@ -31,9 +31,9 @@ export default function () {
 			utils.log.minor('Parsing app.arc file');
 			const { static: static_mount_point } = parse_arc('app.arc');
 
-			const lambda_directory = resolve(join('src', 'http', 'get-index'));
+			const lambda_directory = resolve(join('.begin','src', 'http', 'get-index'));
 			const static_directory = resolve(static_mount_point);
-			const server_directory = resolve(join('src', 'shared'));
+			const server_directory = resolve(join('.begin','src', 'shared'));
 
 			utils.log.minor('Writing client application...');
 			utils.copy_static_files(static_directory);

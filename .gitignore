@@ -4,3 +4,5 @@ node_modules
 /.svelte
 /build
 /functions
+.begin
+.svelte-kit/output
