@@ -9,6 +9,7 @@
 		"preview": "svelte-kit preview"
 	},
 	"devDependencies": {
+		"@architect/sandbox": "^3.7.4",
 		"@sveltejs/adapter-begin": "^1.0.0-next.11",
 		"@sveltejs/adapter-netlify": "^1.0.0-next.18",
 		"@sveltejs/kit": "^1.0.0-next.120",
