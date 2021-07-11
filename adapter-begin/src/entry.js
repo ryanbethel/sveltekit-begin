@@ -12,7 +12,7 @@ init();
 
 // TODO: run init() on the app before handling routes
 
-async function handler(event) {
+export async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 
 	const query = new url.URLSearchParams(rawQueryString);
@@ -41,4 +41,3 @@ async function handler(event) {
 	};
 }
 
-export default handler
