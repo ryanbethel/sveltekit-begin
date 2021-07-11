@@ -1,6 +1,7 @@
 'use strict';
 
 import url from 'url';
+import '@sveltejs/kit/install-fetch'
 // import app from '@architect/shared/app.js'; // eslint-disable-line import/no-unresolved
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
