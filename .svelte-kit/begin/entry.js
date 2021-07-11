@@ -1,7 +1,13 @@
 'use strict';
 
 import url from 'url';
-import app from '@architect/shared/app.js'; // eslint-disable-line import/no-unresolved
+// import app from '@architect/shared/app.js'; // eslint-disable-line import/no-unresolved
+//import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
+import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
+
+init();
+//const url = require('url')
+//const app = require('@architect/shared/app.js')
 
 // TODO: run init() on the app before handling routes
 
@@ -10,7 +16,7 @@ async function handler(event) {
 
 	const query = new url.URLSearchParams(rawQueryString);
 
-	const rendered = await app.render({
+	const rendered = await render({
 		host,
 		method: httpMethod,
 		headers,
@@ -34,4 +40,4 @@ async function handler(event) {
 	};
 }
 
-export { handler };
+export default handler

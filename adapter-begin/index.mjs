@@ -1,6 +1,8 @@
 import { readFileSync, existsSync } from 'fs';
 import parse from '@architect/parser';
 import path from 'path';
+import { fileURLToPath } from 'url'
+import esbuild from 'esbuild'
 const { resolve, join } = path
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
@@ -28,6 +30,16 @@ export default function () {
 		name: '@sveltejs/adapter-begin',
 
 		async adapt({ utils }) {
+			
+			const files = fileURLToPath(new URL('./src', import.meta.url))
+			utils.copy(join(files, 'entry.js'), '.svelte-kit/begin/entry.js');
+			await esbuild.build({
+				entryPoints: ['.svelte-kit/begin/entry.js'],
+				outfile: join('.begin', 'render/index.js'),
+				bundle: true,
+				platform: 'node'
+			})
+
 			utils.log.minor('Parsing app.arc file');
 			const { static: static_mount_point } = parse_arc('app.arc');
 
