@@ -1,13 +1,13 @@
 @app
 svelte-kit-app
  
-#@shared
-#src .begin/src/shared
+@shared
+src .begin/shared
 
 @http
 /*
   method any
-  src .begin/handler
+  src .begin/render
 
 @static
 fingerprint true

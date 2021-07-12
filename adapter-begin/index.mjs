@@ -35,7 +35,7 @@ export default function () {
 			utils.copy(join(files, 'entry.js'), '.svelte-kit/begin/entry.js');
 			await esbuild.build({
 				entryPoints: ['.svelte-kit/begin/entry.js'],
-				outfile: join('.begin', 'render/index.js'),
+				outfile: join('.begin', 'render', 'index.js'),
 				bundle: true,
 				platform: 'node'
 			})
@@ -45,7 +45,7 @@ export default function () {
 
 			const lambda_directory = resolve(join('.begin','src', 'http', 'get-index'));
 			const static_directory = resolve('.begin','public');
-			const server_directory = resolve(join('.begin','handler'));
+			const server_directory = resolve(join('.begin','shared'));
 
 			utils.log.minor('Writing client application...');
 			console.log(static_directory)
@@ -54,10 +54,10 @@ export default function () {
 
 			utils.log.minor('Building lambda...');
 			const local_lambda_dir = join(__dirname, 'files');
-			utils.copy(local_lambda_dir, lambda_directory);
+			//utils.copy(local_lambda_dir, lambda_directory);
 
 			utils.log.minor('Writing server application...');
-			utils.copy_server_files(server_directory);
+			//utils.copy_server_files(server_directory);
 
 			utils.log.minor('Prerendering static pages...');
 			await utils.prerender({
