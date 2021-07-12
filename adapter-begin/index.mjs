@@ -48,6 +48,7 @@ export default function () {
 			const server_directory = resolve(join('.begin','src', 'shared'));
 
 			utils.log.minor('Writing client application...');
+			console.log(static_directory)
 			utils.copy_static_files(static_directory);
 			utils.copy_client_files(static_directory);
 

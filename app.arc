@@ -6,9 +6,9 @@ svelte-kit-app
 
 @http
 /*
-  method get
-  src .begin/render
-  #src .begin/src/http/get-index
+  method any
+  src .begin/handler
 
 @static
+fingerprinting true
 folder .begin/public

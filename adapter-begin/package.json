@@ -17,6 +17,7 @@
 		"index.d.ts"
 	],
 	"dependencies": {
+		"@architect/functions": "^3.14.1",
 		"@architect/parser": "^3.0.1"
 	},
 	"devDependencies": {
