@@ -20,9 +20,11 @@ export async function handler(event) {
 		console.log(arc.static(path))
 		let staticPath = arc.static(path)
 		return {
-		statusCode: 307,
+		statusCode: 302,
 		location:staticPath}
 	} catch (e) {
+		console.log('falling to server render')
+		console.log({path})
 		
 
 	const query = new url.URLSearchParams(rawQueryString);
