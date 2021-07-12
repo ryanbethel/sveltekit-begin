@@ -16,6 +16,7 @@ export async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
 	try {
+		console.log({path})
 		let staticPath = arc.static(path)
 		return {
 		statusCode: 307,
