@@ -45,7 +45,7 @@ export default function () {
 
 			const lambda_directory = resolve(join('.begin','src', 'http', 'get-index'));
 			const static_directory = resolve('.begin','public');
-			const server_directory = resolve(join('.begin','src', 'shared'));
+			const server_directory = resolve(join('.begin','handler'));
 
 			utils.log.minor('Writing client application...');
 			console.log(static_directory)
