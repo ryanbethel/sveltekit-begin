@@ -10,5 +10,5 @@ svelte-kit-app
   src .begin/handler
 
 @static
-fingerprinting true
+fingerprint true
 folder .begin/public
