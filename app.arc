@@ -11,5 +11,5 @@ src .begin/shared
 
 
 @static
-fingerprint true
 folder .begin/public
+# fingerprint true
