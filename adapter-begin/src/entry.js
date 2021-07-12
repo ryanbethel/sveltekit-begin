@@ -6,6 +6,7 @@ import '@sveltejs/kit/install-fetch'
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import arc from '@architect/functions'
+
 init();
 //const url = require('url')
 //const app = require('@architect/shared/app.js')
