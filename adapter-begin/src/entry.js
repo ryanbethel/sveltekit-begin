@@ -17,6 +17,7 @@ export async function handler(event) {
 	
 	try {
 		console.log({path})
+		console.log(arc.static(path))
 		let staticPath = arc.static(path)
 		return {
 		statusCode: 307,
