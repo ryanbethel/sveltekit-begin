@@ -21,8 +21,9 @@ export async function handler(event) {
 		console.log(arc.static(path))
 		let staticPath = arc.static(path)
 		return {
-		statusCode: 302,
-		location:staticPath}
+			statusCode: 302,
+			headers: `location:${staticPath}`
+		}
 	} catch (e) {
 		console.log('falling to server render')
 		console.log({path})
@@ -53,5 +54,6 @@ export async function handler(event) {
 		body: 'Not Found'
 	};
 }
+
 }
 
