@@ -22,7 +22,7 @@ export async function handler(event) {
 		let staticPath = arc.static(path)
 		return {
 			statusCode: 302,
-			Headers: `Location:"${staticPath}"`
+			headers: {'location':`"${staticPath}"`}
 		}
 	} catch (e) {
 		console.log('falling to server render')
