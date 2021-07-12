@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync,writeFileSync } from 'fs';
 import parse from '@architect/parser';
 import path from 'path';
 import { fileURLToPath } from 'url'
@@ -57,7 +57,8 @@ export default function () {
 			//utils.copy(local_lambda_dir, lambda_directory);
 
 			utils.log.minor('Writing server application...');
-			//utils.copy_server_files(server_directory);
+			utils.copy_server_files(server_directory);
+			//writeFileSync(join('.begin','shared','.keep.js'),'//keep this', { flag: 'wx' })
 
 			utils.log.minor('Prerendering static pages...');
 			await utils.prerender({
