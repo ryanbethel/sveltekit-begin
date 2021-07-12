@@ -5,4 +5,5 @@ node_modules
 /build
 /functions
 .begin
+!.begin/shared/.keep
 .svelte-kit/output
