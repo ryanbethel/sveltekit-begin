@@ -1,8 +1,8 @@
 @app
 svelte-kit-app
  
-@shared
-src .begin/shared
+#@shared
+#src .begin/shared
 
 @http
 /*
