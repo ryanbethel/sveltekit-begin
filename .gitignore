@@ -8,5 +8,5 @@ node_modules
 !.begin/shared
 .begin/shared/*
 !.begin/shared/.keep
-!.begin/shared/static.json
+# !.begin/shared/static.json
 .svelte-kit/output
