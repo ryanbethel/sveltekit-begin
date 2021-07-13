@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build --verbose",
+		"build:notauto": "svelte-kit build --verbose",
 		"preview": "svelte-kit preview"
 	},
 	"devDependencies": {

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="theme-color" content="#333333">
+
+	<script>
+		try {
+			if (!('theme' in localStorage)) {
+				localStorage.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+					? 'dark'
+					: 'light';
+			}
+
+			document.querySelector('html').classList.add(localStorage.theme);
+		} catch (e) {
+			console.error(e);
+		}
+	</script>
+
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" type="image/png" href="/favicon.png">
+
+	<title>About • Svelte Hacker News</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-2f6568d9.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-b0eb1977.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-1e6f6464.js">
+		<link rel="modulepreload" href="/./_app/pages/about.svelte-6d3b0500.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-3079ad39.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-2f6568d9.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: null
+			});
+		</script>
+</head>
+
+<body>
+	<div id="svelte">
+
+
+<nav class="svelte-7jmz2r"><img alt="Svelte Hacker News logo" class="icon svelte-7jmz2r" src="/favicon.png">
+
+	<ul class="svelte-7jmz2r"><li class="svelte-7jmz2r"><a sveltekit:prefetch href="/top/1" class="svelte-7jmz2r">top</a></li>
+<li class="svelte-7jmz2r"><a sveltekit:prefetch href="/new/1" class="svelte-7jmz2r">new</a></li>
+<li class="svelte-7jmz2r"><a sveltekit:prefetch href="/show/1" class="svelte-7jmz2r">show</a></li>
+<li class="svelte-7jmz2r"><a sveltekit:prefetch href="/ask/1" class="svelte-7jmz2r">ask</a></li>
+<li class="svelte-7jmz2r"><a sveltekit:prefetch href="/jobs/1" class="svelte-7jmz2r">jobs</a></li>
+
+<li class="about svelte-7jmz2r"><a sveltekit:prefetch href="/about" class="svelte-7jmz2r selected">about</a></li></ul>
+</nav>
+
+
+
+<main class="svelte-12dt5ya">
+
+<h1>About this site</h1>
+
+<p>This is a simple Hacker News clone, built with <a href="https://kit.svelte.dev">SvelteKit</a>, an application framework for <a href="https://svelte.dev">Svelte</a>.</p>
+
+<p>Svelte is a new kind of framework, one that compiles your component templates into fast, compact JavaScript — either client-side or server-side. You can read more about the design and philosophy in the <a href="https://svelte.dev/blog/svelte-3-rethinking-reactivity">introductory blog post</a>.</p>
+
+<p>We&#39;re using <a href="https://github.com/davideast/hnpwa-api">hnpwa-api</a> as a backend. The app is hosted on <a href="https://cloud.google.com/run/">Cloud Run</a>, using <a href="https://www.cloudflare.com/">Cloudflare</a> for the CDN. <a href="https://github.com/sveltejs/hn.svelte.dev">The source code is here</a>.</p></main>
+
+<button aria-label="Toggle theme" title="Toggle theme" class="svelte-15rngbk">toggle theme
+
+	<svg viewBox="0 0 24 24" class="svelte-15rngbk"><path class="light svelte-15rngbk" d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z"></path><path class="dark svelte-15rngbk" d="M12,18C11.11,18 10.26,17.8 9.5,17.45C11.56,16.5 13,14.42 13,12C13,9.58 11.56,7.5 9.5,6.55C10.26,6.2 11.11,6 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"></path></svg>
+</button>
+
+
+
+	
+</div>
+</body>
+
+</html>

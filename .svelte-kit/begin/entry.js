@@ -6,6 +6,7 @@ import '@sveltejs/kit/install-fetch'
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import arc from '@architect/functions'
+
 init();
 //const url = require('url')
 //const app = require('@architect/shared/app.js')
@@ -20,9 +21,12 @@ export async function handler(event) {
 		console.log(arc.static(path))
 		let staticPath = arc.static(path)
 		return {
-		statusCode: 307,
-		location:staticPath}
+			statusCode: 302,
+			headers: {'location':staticPath}
+		}
 	} catch (e) {
+		console.log('falling to server render')
+		console.log({path})
 		
 
 	const query = new url.URLSearchParams(rawQueryString);
@@ -50,5 +54,6 @@ export async function handler(event) {
 		body: 'Not Found'
 	};
 }
+
 }
 
