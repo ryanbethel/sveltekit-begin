@@ -15,7 +15,7 @@ init();
 // TODO: run init() on the app before handling routes
 // 
 
-export default async function handler(event) {
+export async function handler(event) {
 	const result = await  arc.http.async(checkStatic, svelteRender)
 	return result
 } 
