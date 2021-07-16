@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build --verbose",
+		"build": "svelte-kit build --verbose && grep module.exports .begin/render/entry-index.js",
 		"preview": "svelte-kit preview"
 	},
 	"devDependencies": {
