@@ -15,16 +15,15 @@ init();
 // TODO: run init() on the app before handling routes
 // 
 
-// async function checkStatic(req){ proxy(req, {passthru:true})}
-// async function render(req) { svelteRender(req)}
-// exports.handler = arc.http.async(checkStatic, handler)
+async function checkStatic(req){ proxy(req, {passthru:true})}
+async function render(req) { svelteRender(req)}
+export handler = arc.http.async(checkStatic, handler)
 
-export async function handler(event) {
-// async function handler(event) {
+// export async function handler(event) {
+async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
-	try {
-		proxy(event,{passthru:true})
+	// try {
 	// 	console.log({path})
 	// 	console.log(arc.static(path))
 	// 	let staticPath = arc.static(path)
@@ -32,7 +31,7 @@ export async function handler(event) {
 	// 		statusCode: 302,
 	// 		headers: {'location':staticPath}
 	// 	}
-	} catch (e) {
+	// } catch (e) {
 		console.log('falling to server render')
 		console.log({path})
 		
@@ -63,5 +62,5 @@ export async function handler(event) {
 	};
 }
 
-}
+// }
 
