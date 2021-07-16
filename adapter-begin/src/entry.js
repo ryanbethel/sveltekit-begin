@@ -5,7 +5,7 @@ import '@sveltejs/kit/install-fetch'
 // import app from '@architect/shared/app.js'; // eslint-disable-line import/no-unresolved
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
-import arc from '@architect/functions'
+// import arc from '@architect/functions'
 import proxy from '../../proxy-test/http/proxy'
 
 init();
@@ -15,15 +15,16 @@ init();
 // TODO: run init() on the app before handling routes
 // 
 
-async function checkStatic(req){ proxy(req, {passthru:true})}
+// async function checkStatic(req){ proxy(req, {passthru:true})}
 // async function render(req) { svelteRender(req)}
-exports.handler = arc.http.async(checkStatic, handler)
+// exports.handler = arc.http.async(checkStatic, handler)
 
-// export async function handler(event) {
-async function handler(event) {
+export async function handler(event) {
+// async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
-	// try {
+	try {
+		proxy(event,{passthru:true})
 	// 	console.log({path})
 	// 	console.log(arc.static(path))
 	// 	let staticPath = arc.static(path)
@@ -31,7 +32,7 @@ async function handler(event) {
 	// 		statusCode: 302,
 	// 		headers: {'location':staticPath}
 	// 	}
-	// } catch (e) {
+	} catch (e) {
 		console.log('falling to server render')
 		console.log({path})
 		
@@ -62,5 +63,5 @@ async function handler(event) {
 	};
 }
 
-// }
+}
 
