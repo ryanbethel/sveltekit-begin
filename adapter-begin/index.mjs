@@ -42,7 +42,7 @@ export default function () {
 
 			writeFileSync(join('.begin', 'render', 'index.js'), `
 			'use strict';
-			const {handler}= require('./entry-index.js')
+			const handler= require('./entry-index.js')
 		  exports.handler = handler`)
 
 			utils.log.minor('Parsing app.arc file');
