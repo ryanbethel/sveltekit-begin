@@ -12,4 +12,4 @@ src .begin/shared
 
 @static
 folder .begin/public
-# fingerprint true
+fingerprint true
