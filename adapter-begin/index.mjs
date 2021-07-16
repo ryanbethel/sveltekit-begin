@@ -35,10 +35,15 @@ export default function () {
 			utils.copy(join(files, 'entry.js'), '.svelte-kit/begin/entry.js');
 			await esbuild.build({
 				entryPoints: ['.svelte-kit/begin/entry.js'],
-				outfile: join('.begin', 'render', 'index.js'),
+				outfile: join('.begin', 'render', 'entry-index.js'),
 				bundle: true,
 				platform: 'node'
 			})
+
+			writeFileSync(join('.begin', 'render', 'index.js'), `
+			'use strict';
+			const {handler}= require('./entry-index.js')
+		  exports.handler = handler`)
 
 			utils.log.minor('Parsing app.arc file');
 			//const { static: static_mount_point } = parse_arc('app.arc');
