@@ -4,12 +4,12 @@ node_modules
 /.svelte
 /build
 /functions
-#  .begin/*
-# !.begin/shared
-# .begin/shared/*
-# !.begin/shared/.keep
-# !.begin/shared/static.json
-# .begin/shared/static.json
-# .begin/public/static.json
-# .svelte-kit/output
-# .svelte-kit/begin
+.begin/*
+!.begin/shared
+.begin/shared/*
+!.begin/shared/.keep
+!.begin/shared/static.json
+.begin/shared/static.json
+.begin/public/static.json
+.svelte-kit/output
+.svelte-kit/begin
