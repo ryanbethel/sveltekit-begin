@@ -6,7 +6,7 @@ import '@sveltejs/kit/install-fetch'
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import arc from '@architect/functions'
-// import proxy from '../../proxy-test/http/proxy'
+import proxy from '../../proxy-test/http/proxy'
 
 init();
 //const url = require('url')
@@ -31,13 +31,14 @@ export async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
 	try {
-		console.log({path})
-		console.log(arc.static(path))
-		let staticPath = arc.static(path)
-		return {
-			statusCode: 302,
-			headers: {'location':staticPath}
-		}
+		proxy(req, {passthru:true})
+		// console.log({path})
+		// console.log(arc.static(path))
+		// let staticPath = arc.static(path)
+		// return {
+		// 	statusCode: 302,
+		// 	headers: {'location':staticPath}
+		// }
 	} catch (e) {
 		console.log('falling to server render')
 		console.log({path})
