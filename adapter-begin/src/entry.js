@@ -6,8 +6,7 @@ import '@sveltejs/kit/install-fetch'
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import arc from '@architect/functions'
-import theThing from '../../proxy-test/http/proxy'
-const { proxy }=theThing
+import http from '../../proxy-test/http'
 
 init();
 //const url = require('url')
@@ -16,7 +15,7 @@ init();
 // TODO: run init() on the app before handling routes
 // 
 
-async function checkStatic(req){ proxy(req, {passthru:true})}
+async function checkStatic(req){ http.proxy(req, {passthru:true})}
 // async function render(req) { svelteRender(req)}
 exports.handler = arc.http.async(checkStatic, handler)
 
