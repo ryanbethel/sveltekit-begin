@@ -106,7 +106,8 @@ function proxy (config = {}) {
   }
 }
 
-module.exports = {
-  proxy,  // Default
-  read    // Read a specific file
-}
+// module.exports = {
+//   proxy,  // Default
+//   read    // Read a specific file
+// }
+ module.exports = proxy
