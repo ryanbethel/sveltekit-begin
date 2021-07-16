@@ -16,7 +16,7 @@ init();
 // 
 
 async function checkStatic(req){ proxy(req, {passthru:true})}
-export async function handler(event) {
+export default async function handler(event) {
 	const result = await  arc.http.async(checkStatic, svelteRender)
 	return result
 } 
