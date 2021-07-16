@@ -5,7 +5,7 @@ import '@sveltejs/kit/install-fetch'
 // import app from '@architect/shared/app.js'; // eslint-disable-line import/no-unresolved
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
-// import arc from '@architect/functions'
+import arc from '@architect/functions'
 import proxy from '../../proxy-test/http/proxy'
 
 init();
@@ -16,8 +16,8 @@ init();
 // 
 
 async function checkStatic(req){ proxy(req, {passthru:true})}
-const handler = arc.http.async(checkStatic, svelteRender)
-export handler
+export const handler = arc.http.async(checkStatic, svelteRender)
+
 
 // export async function handler(event) {
 async function svelteRender(event) {
