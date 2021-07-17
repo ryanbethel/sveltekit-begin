@@ -40,7 +40,7 @@ export async function handler(event) {
 		// 	headers: {'location':staticPath}
 		// }
 	// } catch (e) {
-		arc.http.proxy(event)
+		arc.http.proxy()(event)
 		console.log('falling to server render')
 		console.log({path})
 		
