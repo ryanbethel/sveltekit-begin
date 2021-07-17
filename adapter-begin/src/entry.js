@@ -23,7 +23,7 @@ init();
 
 
 
-const checkStatic = arc.http.proxy()
+const checkStatic = async () => { return }//arc.http.proxy()
 
 export const handler = arc.http.async(checkStatic,svelteHandler)
 
