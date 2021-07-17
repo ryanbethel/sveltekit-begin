@@ -30,8 +30,7 @@ export async function handler(event) {
 // async function svelteRender(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
-	try {
-		//arc.http.proxy(req)
+	// try {
 
 		// console.log({path})
 		// console.log(arc.static(path))
@@ -40,7 +39,8 @@ export async function handler(event) {
 		// 	statusCode: 302,
 		// 	headers: {'location':staticPath}
 		// }
-	} catch (e) {
+	// } catch (e) {
+		arc.http.proxy(req)
 		console.log('falling to server render')
 		console.log({path})
 		
@@ -71,5 +71,5 @@ export async function handler(event) {
 	};
 }
 
-}
+// }
 
