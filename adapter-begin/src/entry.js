@@ -31,8 +31,8 @@ export async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
 	try {
-		arc.http.proxy(req)
-		
+		//arc.http.proxy(req)
+
 		// console.log({path})
 		// console.log(arc.static(path))
 		// let staticPath = arc.static(path)
