@@ -6,7 +6,7 @@ import '@sveltejs/kit/install-fetch'
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import arc from '@architect/functions'
-import proxy from '../../proxy-test/http/proxy'
+//import proxy from '../../proxy-test/http/proxy'
 
 init();
 //const url = require('url')
@@ -31,7 +31,7 @@ export async function handler(event) {
 	const { host, rawPath: path, httpMethod, rawQueryString, headers, body } = event;
 	
 	try {
-		proxy(req, {passthru:true})
+		arc.http.proxy(req)
 		// console.log({path})
 		// console.log(arc.static(path))
 		// let staticPath = arc.static(path)
