@@ -1,0 +1,3 @@
+[submodule "arc-function/functions"]
+	path = arc-function/functions
+	url = https://github.com/ryanbethel/functions.git
