@@ -6,7 +6,7 @@ import '@sveltejs/kit/install-fetch'
 //import app from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 import { init, render } from '../output/server/app.js'; // eslint-disable-line import/no-unresolved
 // import arc from '@architect/functions'
-import arc from '../../arc-function/functions'
+import arc from '../../arc-fun/functions'
 //import proxy from '../../proxy-test/http/proxy'
 
 init();
