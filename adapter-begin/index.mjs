@@ -36,7 +36,7 @@ export default function () {
 			await esbuild.build({
 				entryPoints: ['.svelte-kit/begin/entry.js'],
 				// outfile: join('.begin', 'render', 'entry-index.js'),
-				outfile: join('.begin', 'render', 'index.js'),
+				outfile: join('.begin', 'sveltekit-render', 'index.js'),
 				bundle: true,
 				platform: 'node'
 			})

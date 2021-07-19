@@ -42,9 +42,9 @@ export async function svelteHandler(event) {
 		// 	headers: {'location':staticPath}
 		// }
 	// } catch (e) {
-		await arc.http.proxy()(event)
-		console.log('falling to server render')
-		console.log({path})
+		// await arc.http.proxy()(event)
+		// console.log('falling to server render')
+		// console.log({path})
 		
 
 	const query = new url.URLSearchParams(rawQueryString);
