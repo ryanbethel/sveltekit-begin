@@ -126,7 +126,7 @@ class Router {
 			// Ignore if tag has
 			// 1. 'download' attribute
 			// 2. 'rel' attribute includes external
-			const rel = a.getAttribute('rel')?.split(/\s+/);
+			const rel = a.getAttribute('rel') && a.getAttribute('rel').split(/\s+/);
 
 			if (a.hasAttribute('download') || (rel && rel.includes('external'))) {
 				return;
@@ -301,11 +301,19 @@ function hash(value) {
  * @returns {import('types/internal').NormalizedLoadOutput}
  */
 function normalize(loaded) {
-	// TODO should this behaviour be dev-only?
-
-	if (loaded.error) {
-		const error = typeof loaded.error === 'string' ? new Error(loaded.error) : loaded.error;
+	const has_error_status =
+		loaded.status && loaded.status >= 400 && loaded.status <= 599 && !loaded.redirect;
+	if (loaded.error || has_error_status) {
 		const status = loaded.status;
+
+		if (!loaded.error && has_error_status) {
+			return {
+				status,
+				error: new Error()
+			};
+		}
+
+		const error = typeof loaded.error === 'string' ? new Error(loaded.error) : loaded.error;
 
 		if (!(error instanceof Error)) {
 			return {
