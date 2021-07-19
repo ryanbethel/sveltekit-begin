@@ -21,7 +21,7 @@
 		"@architect/parser": "^3.0.1"
 	},
 	"devDependencies": {
-		"@sveltejs/kit": "^1.0.0-next.120",
+		"@sveltejs/kit": "1.0.0-next.120",
 		"rollup": "^2.47.0",
 		"sirv": "^1.0.12",
 		"typescript": "^4.2.4"
