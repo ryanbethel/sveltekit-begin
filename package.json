@@ -1,7 +1,6 @@
 {
-	"name": "hn.svelte.dev",
+	"name": "sveltekit-begin",
 	"version": "1.0.0",
-	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -10,12 +9,11 @@
 	},
 	"devDependencies": {
 		"@architect/sandbox": "^3.7.4",
-		"@sveltejs/kit": "1.0.0-next.120",
+		"@sveltejs/kit": "^1.0.0-next.120",
 		"svelte": "^3.38.3"
 	},
 	"dependencies": {
-		"@architect/functions": "^3.14.2",
-		"@ryanbethel/sveltekit-begin-adapter": "^0.0.7",
+		"@ryanbethel/sveltekit-begin-adapter": "^0.0.8",
 		"url": "^0.11.0"
 	}
 }
