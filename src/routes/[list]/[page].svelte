@@ -14,7 +14,7 @@
 
         const page = +params.page;
 
-        const res = await fetch(`https://api.hnpwa.com/v0/${list}/${page}.json`, { mode: "no-cors" });
+        const res = await fetch(`https://api.hnpwa.com/v0/${list}/${page}.json`, { mode: "cors" });
         const items = await res.json();
 
         return {
